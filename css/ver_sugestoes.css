@@ -1,0 +1,28 @@
+body{background-image: url('../img/fundo.jpg');
+        font-family: 'Arial', sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        overflow: hidden;}
+
+.card{box-shadow: 0 4px 8px rgba(0, 0, 0, 0.53);
+        width: 100%;
+        max-width: 435px;
+        text-align: center;}
+
+.header{display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color:rgb(7, 82, 0);
+        color: white;
+        border-radius: 5px;
+        height: 50px;
+        font-size: 24px;
+        text-align: center;}
+
+.container {display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;}
