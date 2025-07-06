@@ -17,31 +17,30 @@ session_start();
 <body>
 
 <div class="login-container">
-  
-<main class="form-signin">
-  <form action="#" method="post">
-    <div class="card bg-primary text-white">
-        <div class="card-body"><b>Login</b></div>
-    </div>
-    <div class="mb-2 mt-2">
-      <label class="form-label">📧 E-mail</label>
-      <input type="email" class="form-control" required placeholder="Digite o e-mail" name="email">
-    </div>
-    <div class="mb-2 mt-2 senha-container">
-      <label class="form-label">🔒 Senha</label>
-      <input type="password" class="form-control" required placeholder="Digite a senha" name="senha" id="senha">
-      <span class="olho" onclick="mostrarOcultarSenha(this)">🙈</span>
-    </div>
-    <div class="d-flex mb-3">
-      <a href="cadastro_cliente.php">Cadastre-se</a>
-      <a href="esqueceu_senha.php" class="ms-auto">Esqueceu Senha?</a>
-    </div>
-    <div class="d-flex">
-      <a href="index.php" type="button" class="btn btn-secondary w-50 me-2">Voltar</a>
-      <button class="w-50 btn btn-success" type="submit">Login</button>
-    </div>
-  </form>
-</main>
+      <main>
+        <form action="#" method="post">
+          <div class="card bg-primary text-white">
+              <div class="card-body"><b>Login</b></div>
+          </div>
+          <div class="mb-2 mt-2">
+            <label class="form-label">📧 E-mail</label>
+            <input type="email" class="form-control" required placeholder="Digite o e-mail" name="email">
+          </div>
+          <div class="mb-2 mt-2 senha-container">
+            <label class="form-label">🔒 Senha</label>
+            <input type="password" class="form-control" required placeholder="Digite a senha" name="senha" id="senha">
+            <span class="olho" onclick="mostrarOcultarSenha(this)">🙈</span>
+          </div>
+          <div class="d-flex mb-3">
+            <a href="cadastro_cliente.php">Cadastre-se</a>
+            <a href="esqueceu_senha.php" class="ms-auto">Esqueceu Senha?</a>
+          </div>
+          <div class="d-flex">
+            <a href="index.php" type="button" class="btn btn-secondary w-50 me-2">Voltar</a>
+            <button class="w-50 btn btn-success" type="submit">Login</button>
+          </div>
+        </form>
+      </main>
 
 <?php 
     if($_POST)
@@ -54,7 +53,7 @@ session_start();
 
     if($result = $conexao->query($sql))
     {
-        if($result->num_rows >0)
+        if($result->num_rows > 0)
         {
            $linha = $result->fetch_assoc();
            $id = $linha['id_cliente'];
@@ -72,11 +71,7 @@ session_start();
            
         }
         else
-            echo '<div id="alerta" class="alerta">
-                    <div class="alerta-conteudo">
-                        <p>🔒 Senha incorreta</p>
-                    </div>
-                  </div>';
+            echo '<script>alert("Usuário/Senha Incorreto. Tente Novamente!")</script>';
     }
     else 
         echo 'Erro ao executar a consulta. '.$conexao->error;

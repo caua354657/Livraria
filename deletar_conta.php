@@ -26,14 +26,12 @@ session_start();
       $id = $_GET['id_cliente'];
       $_SESSION['id_cliente'] = $id;
 
-      $sql = "select * from cliente where id_cliente = $id";
+      $sql = "select * from cliente where id_cliente = ".$_SESSION['id_cliente'];
 
       if($result = $conexao->query($sql))
       {
         $linha = $result->fetch_assoc();
-        $id = $linha['id_cliente'];
         $nome = $linha['nome'];
-        $_SESSION['id_cliente'] = $id;
         $_SESSION['nome'] = $nome;
       }
     }
@@ -45,7 +43,6 @@ session_start();
         <div class="card-body text-center">
             <div class="d-flex justify-content-center gap-3">
                 <p><strong>👤<?php echo $_SESSION['nome'];?></strong></p>
-                <p><strong>🆔</strong> <?php echo $_SESSION['id_cliente'];?></p>
             </div>
             <p>Deseja realmente excluir? Isso resultará na perda de todos os dados</p>
         </div>

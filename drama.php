@@ -148,7 +148,7 @@ if (isset($_GET['livro']))
 else
     $livro = '';
 
-$sql = "select * from livro where fk_categoria = 5 and titulo like '%$livro%' order by rand() limit 12";
+$sql = "select * from livro where id_categoria = 5 and titulo like '%$livro%' order by rand() limit 12";
 
 if ($result = $conexao->query($sql)) 
 {
@@ -160,16 +160,16 @@ if ($result = $conexao->query($sql))
         $id = $row['id_livro'];
         $arquivo = $row['pdf'];
         echo '<div class="col-6 col-md-4 d-flex justify-content-center">
-                <div class="card shadow-sm w-100 mb-4 border-2" style="max-width: 275px; border-color: black;">
-                  <div class="d-flex justify-content-center align-items-center card-body btn btn-outline-danger" style="position: absolute; width: 45px; height: 45px;">
+                <div class="card" style="width: 275px;">
+                  <div class="d-flex justify-content-center align-items-center card-body btn btn-danger" style="position: absolute; width: 45px; height: 45px;">
                     <a href="meus_favoritos.php?acoes=favoritar&id='.$id.'" class="nav-link" style="cursor: pointer; font-size: 30px;">❤️</a>
                   </div>
-                  <div class="d-flex justify-content-center align-items-center card-body btn btn-outline-dark" style="position: absolute; top: 0; right: 0; width: 45px; height: 45px;">
+                  <div class="d-flex justify-content-center align-items-center card-body btn btn-dark" style="position: absolute; top: 0; right: 0; width: 45px; height: 45px;">
                     <a href="carrinho.php?acao=add&id='.$id.'" class="nav-link" style="cursor: pointer; font-size: 30px;">🛒</a>
                   </div>
-                  <img src="img/'.$row['imagem'].'" class="card-img-top" alt="Capa do livro" style="height: 200px; object-fit: cover;">
+                  <img src="capa_livro/'.$row['imagem'].'" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
                   <div class="card-body">
-                    <h5 class="card-title">'.$row['titulo'].'</h5>
+                    <h4 class="card-title">'.$row['titulo'].'</h4>
                     <p class="card-text mb-1 text-muted">'.$row['autor'].'</p>
                     <p class="card-text fw-bold" style="color: rgb(159, 133, 28)">R$'.number_format($row['preco'], 2, ',', '.').'</p>
                     <div class="d-flex">
@@ -178,13 +178,15 @@ if ($result = $conexao->query($sql))
                     </div>
                   </div>
                 </div>
-              </div>';
+            </div>';
     }
     echo '</div>';
     echo '</div>';
 }
     $conexao->close();
 ?>
+
+<br><br>
 
 <div class="footer-clean">
         <footer>

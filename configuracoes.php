@@ -13,7 +13,7 @@
 
 <div class="container-config">
     <div class="card">
-        <div class="header-config text-center">⚙️ Configurações da Conta</div>
+        <div class="header-config text-center fw-bold">⚙️ Configurações da Conta</div>
         <div class="card-body">
             <ul class="list-group">
                 <a href="perfil.php" class="text-decoration-none"><li class="list-group-item">📝 Perfil</li></a>

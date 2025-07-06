@@ -125,7 +125,7 @@
         }
         
         else 
-            echo '<center><a href="cadastro_cliente.php"><button type="button" class="btn btn-outline-primary">Cadastrar Cliente</button></a></center>';
+            echo '<center><a href="cadastro_cliente.php"><button type="button" class="btn btn-outline-success">Cadastrar Cliente</button></a></center>';
         
     } 
         else 

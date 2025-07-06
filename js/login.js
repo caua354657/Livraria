@@ -13,13 +13,3 @@ function mostrarOcultarSenha(icone)
         icone.textContent = "👁️";
     }
 }
-
-window.onload = function() 
-{
-    var alerta = document.getElementById("alerta");
-    if(alerta) 
-    {
-        alerta.style.display = "flex";
-        setTimeout(() => {alerta.style.display = "none";}, 3000);
-    }
-}

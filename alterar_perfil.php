@@ -43,7 +43,7 @@ ob_start();
    <div class="container-alterar">
 
     <div class="header-card bg-primary text-white d-flex justify-content-center align-items-center" style="height: 60px; border-radius: 5px;">
-        <h4 class="m-0">Alterar Perfil</h4>
+        <h4 class="m-0 fw-bold">Alterar Perfil</h4>
     </div>
 
     <form action="#" enctype="multipart/form-data" method="POST">
@@ -152,11 +152,7 @@ ob_start();
             } 
         }
         else
-            echo '<div id="alerta" class="alerta">
-                    <div class="alerta-conteudo">
-                        <p>🔒 Senha incorreta</p>
-                    </div>
-                  </div>';
+            echo '<script>alert("Senha Incorreta. Tente Novamente!")</script>';
     }
     $conexao->close();
 ?>

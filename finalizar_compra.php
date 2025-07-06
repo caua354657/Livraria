@@ -28,7 +28,6 @@ if(!isset($_SESSION['id_cliente']))
 <body>
 
 <div class="container">
-    <h1>Finalizando Compra</h1>
         
 <?php
     if(count($_SESSION['carrinho']) == 0)

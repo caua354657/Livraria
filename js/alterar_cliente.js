@@ -7,13 +7,3 @@ document.getElementById('inputimagem').addEventListener('change', function()
       img.src = URL.createObjectURL(file);
     }
 });
-
-window.onload = function() 
-{
-    var alerta = document.getElementById("alerta");
-    if(alerta) 
-    {
-        alerta.style.display = "flex";
-        setTimeout(() => {alerta.style.display = "none";}, 3000);
-    }
-}

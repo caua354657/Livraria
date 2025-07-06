@@ -12,22 +12,21 @@
 <body>
 
 <div class="pagamento-container">
-        <form action="#">
+        <form action="#" method="post">
               <div class="card bg-success text-white">
                 <div class="card-body"><center><b>Pagamento</b></center></div>
               </div>
               <div class="mt-2 mb-3">
                 <label for="pagamento" class="form-label">Forma de Pagamento</label>
                 <select class="form-select" name="pagamento" required>
-                  <option disabled selected style="background-color: black; color: white;">Selecione</option>
-                  <option value="pix">💸PIX</option>
+                  <option value="pix">🧾 BOLETO</option>
                   <option value="cartao">💳 CARTÃO</option>
-                  <option value="boleto">🧾 BOLETO</option>
+                  <option value="boleto">💸PIX</option>
                 </select>
               </div>
               <div class="d-flex">
                   <a href="carrinho.php" type="button" class="btn btn-secondary w-50 me-2">Voltar</a>
-                  <button type="submit" class="btn btn-success w-50">Finalizar Compra</button>
+                  <a href="finalizar_compra.php" type="submit" class="btn btn-success w-50 me-2">Finalizar Compra</a>
               </div>
           </form>
 </div>

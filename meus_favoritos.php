@@ -62,7 +62,7 @@ if(isset($_GET['acoes']))
           </div>
           <div class="conteudo-fundo">
               <div class="text-start p-3">
-                <a href="index.php" class="btn btn-secondary">Voltar</a>
+                <a href="terror.php" class="btn btn-secondary">Voltar</a>
               </div>';
 
     echo '<div class="container livros-container my-4">';
@@ -77,22 +77,24 @@ if(isset($_GET['acoes']))
         {
           $id = $row['id_livro'];
           echo '<div class="col-6 col-md-4 d-flex justify-content-center">
-                <div class="card shadow-sm w-100 mb-4" style="max-width: 275px;">
-                  <div class="d-flex justify-content-center align-items-center card-body btn btn-outline-danger" style="position: absolute; width: 45px; height: 45px;">
+                <div class="card" style="width: 275px;">
+                  <div class="d-flex justify-content-center align-items-center card-body btn btn-danger" style="position: absolute; width: 45px; height: 45px;">
                     <a href="meus_favoritos.php?acoes=tirar&id='.$id.'" class="nav-link" style="cursor: pointer; font-size: 30px;">❌</a>
                   </div>
-                  <div class="d-flex justify-content-center align-items-center card-body btn btn-outline-dark" style="position: absolute; top: 0; right: 0; width: 45px; height: 45px;">
+                  <div class="d-flex justify-content-center align-items-center card-body btn btn-dark" style="position: absolute; top: 0; right: 0; width: 45px; height: 45px;">
                     <a href="carrinho.php?acao=add&id='.$id.'" class="nav-link" style="cursor: pointer; font-size: 30px;">🛒</a>
                   </div>
-                  <img src="img/'.$row['imagem'].'" class="card-img-top" alt="Capa do livro" style="height: 200px; object-fit: cover;">
+                  <img src="capa_livro/'.$row['imagem'].'" class="card-img-top" style="width: 100%; height: 200px; object-fit: cover;">
                   <div class="card-body">
-                    <h5 class="card-title">'.$row['titulo'].'</h5>
+                    <h4 class="card-title">'.$row['titulo'].'</h4>
                     <p class="card-text mb-1 text-muted">'.$row['autor'].'</p>
                     <p class="card-text fw-bold" style="color: rgb(159, 133, 28)">R$'.number_format($row['preco'], 2, ',', '.').'</p>
-                    <a href="carrinho.php?acao=add&id='.$id.'" class="btn btn-success w-100">Comprar</a>
+                    <div class="d-flex">
+                      <a href="carrinho.php?acao=add&id='.$id.'" class="btn btn-success w-100">Comprar</a>
+                    </div>
                   </div>
                 </div>
-              </div>';
+            </div>';
         }
       }
     }

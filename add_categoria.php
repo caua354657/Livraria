@@ -21,11 +21,11 @@
     </div>    
     <div class="mt-3 mb-3">
       <label for="nome" class="form-label">🏷️ Categoria</label>
-      <input type="text" class="form-control" placeholder="Digite a Categoria" name="categoria">  
+      <input type="text" class="form-control" required placeholder="Digite a Categoria" name="categoria">  
     </div>
     <div class="mt-3 mb-3">
       <label for="nome" class="form-label">🔗 Página Destino</label>
-      <input type="text" class="form-control" placeholder="Digite o destino" name="destino">  
+      <input type="text" class="form-control" required placeholder="Digite o destino" name="destino">  
     </div>
     <div class="row g-2">
         <div class="col-6">

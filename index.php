@@ -141,34 +141,34 @@ session_start();
   
   <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="img/Arvore.jpeg" class="d-block w-100 img-fluid" style="height: 730px;">
+        <img src="img/Arvore.jpeg" class="d-block w-100 img-fluid" style="height: 700px;">
         <div class="carousel-caption">
             <h2 style="color: black;">Book Tree</h2>
         </div>
     </div>
     <div class="carousel-item">
         <a href="terror.php">
-            <img src="img/TerrorImagem.png" class="d-block w-100 img-fluid" style="height: 730px;">
+            <img src="img/TerrorImagem.png" class="d-block w-100 img-fluid" style="height: 700px;">
         </a>
     </div>
     <div class="carousel-item">
         <a href="fantasia.php">
-            <img src="img/FantasiaImagem.jpg" class="d-block w-100 img-fluid" style="height: 730px;">
+            <img src="img/FantasiaImagem.jpg" class="d-block w-100 img-fluid" style="height: 700px;">
         </a>
     </div>
     <div class="carousel-item">
         <a href="romance.php">
-            <img src="img/RomanceImagem.jpg" class="d-block w-100 img-fluid" style="height: 730px;">
+            <img src="img/RomanceImagem.jpg" class="d-block w-100 img-fluid" style="height: 700px;">
         </a>
     </div>
     <div class="carousel-item">
         <a href="ficcao.php">
-            <img src="img/FiccaoImagem.jpg" class="d-block w-100 img-fluid" style="height: 730px;">
+            <img src="img/FiccaoImagem.jpg" class="d-block w-100 img-fluid" style="height: 700px;">
         </a>
     </div>
     <div class="carousel-item">
         <a href="drama.php">
-            <img src="img/DramaImagem.jpg" class="d-block w-100 img-fluid" style="height: 730px;">
+            <img src="img/DramaImagem.jpg" class="d-block w-100 img-fluid" style="height: 700px;">
         </a>
     </div>
   </div>

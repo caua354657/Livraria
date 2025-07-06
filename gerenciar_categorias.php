@@ -108,7 +108,7 @@
             echo '</div>';
         }
         else 
-            echo '<center><a href="cadastro_livros.php"><button type="button" class="btn btn-outline-primary">Cadastrar Livro</button></a></center>';
+            echo '<center><a href="add_categoria.php"><button type="button" class="btn btn-outline-success">Cadastrar Categoria</button></a></center>';
         
     } 
         else 

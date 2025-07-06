@@ -146,11 +146,7 @@ ob_start();
             } 
         }
         else
-            echo '<div id="alerta" class="alerta">
-                    <div class="alerta-conteudo">
-                        <p>🔒 Senha incorreta</p>
-                    </div>
-                  </div>';
+            echo '<script>alert("Senha Incorreta. Tente Novamente!")</script>';
     }
     $conexao->close();
 ?>

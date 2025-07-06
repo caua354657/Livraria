@@ -37,17 +37,22 @@
     if(isset($_GET['id_livro']))
     {
         $id = $_GET['id_livro'];
-        $sql = "select imagem from livro where id_livro = $id";
+        $sql = "select imagem, pdf from livro where id_livro = $id";
 
         if($result = $conexao->query($sql))
         {
             $row = $result->fetch_assoc();
             $capa = $row['imagem'];
-            if(!empty($capa)) 
+            $pdf = $row['pdf'];
+            if(!empty($capa) and !empty($pdf)) 
             {
               $arquivo = 'capa_livro/' . $capa;
-              if(is_file($arquivo))
+              $arquivo_pdf = 'pdf_livro/' . $pdf;
+              if(is_file($arquivo) and is_file($arquivo_pdf))
+              {
                  unlink($arquivo);
+                 unlink($arquivo_pdf);
+              }
             }
         }
         
@@ -70,8 +75,8 @@
     else
         $a = '';
 
-    $sql = "select id_livro, titulo, autor, preco, imagem, fk_categoria from livro where titulo like '%$a%' order by id_livro";
-
+    $sql = "select id_livro, titulo, autor, preco, imagem, id_categoria from livro where titulo like '%$a%' order by id_livro";
+    //id_categoria é FK da entidade categoria
     if ($dados = $conexao->query($sql)) 
     {
         $totalRegistros = $dados->num_rows;
@@ -105,19 +110,14 @@
                 echo '<td>'.$linha['titulo'].'</td>';
                 echo '<td>'.$linha['autor'].'</td>';
                 echo '<td>R$'.number_format($linha['preco'], 2, ',', '.').'</td>';
-                echo '<td>'.$linha['fk_categoria'].'</td>';
+                echo '<td>'.$linha['id_categoria'].'</td>'; //foreign key
                 echo '<td>
                         <div class="d-flex justify-content-center align-items-center gap-2">
-                            <a href="cadastro_livros.php">
-                                <button type="button" class="btn btn-outline-primary w-100">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 24 24">
-                                        <path d="M19 11h-6V5h-2v6H5v2h6v6h2v-6h6z"/>
-                                    </svg>
-                                </button>
-                            </a>
+                            <a href="cadastro_livros.php"><button type="button" class="btn btn-outline-primary w-100">➕</button></a>
+                            <a href="add_pdf.php?id='.$linha['id_livro'].'"><button type="button" class="btn btn-outline-primary w-100">📕</button></a>
                             <a href="alterar_livro.php?id='.$linha['id_livro'].'"><button type="button" class="btn btn-outline-success w-100">✏️</button></a>
                             <a href="?id_livro='.$id.'"><button type="button" class="btn btn-outline-danger w-100" onclick="alert(\'Livro '.$id.' excluído com sucesso\')">❌</button></a>
-                        </div>
+                        </div>   
                      </td>';
                 echo '</tr>';
             }
@@ -128,7 +128,7 @@
         }
         
         else 
-            echo '<center><a href="cadastro_livros.php"><button type="button" class="btn btn-outline-primary">Cadastrar Livro</button></a></center>';
+            echo '<center><a href="cadastro_livros.php"><button type="button" class="btn btn-outline-success">Cadastrar Livro</button></a></center>';
         
     } 
         else 

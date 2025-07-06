@@ -28,12 +28,6 @@ ob_start();
             <div class="valid-feedback">Válido</div>
             <div class="invalid-feedback">Preencha este campo.</div>
         </div>
-        <div class="mb-2 mt-2">
-            <label for="perfil" class="form-label">📄 PDF Livro</label>
-            <input type="file" class="form-control" name="pdf" required accept="application/pdf">
-            <div class="valid-feedback">Válido</div>
-            <div class="invalid-feedback">Preencha este campo.</div>
-        </div>
         <div class="row mb-2">
             <div class="col-6">
                 <label for="titulo">📖 Título</label>
@@ -58,7 +52,7 @@ ob_start();
             </div>
             <div class="col-6">
                 <label for="categoria">🏷️ Categoria</label>
-                <select class="form-select form-control" required name="fk_categoria">
+                <select class="form-select form-control" required name="id_categoria">
                     <option value="" disabled selected style="background-color: black; color: white;">Selecione uma categoria</option>
                     <option value="1">Terror</option>
                     <option value="2">Fantasia</option>
@@ -90,27 +84,21 @@ ob_start();
   if($_SERVER['REQUEST_METHOD'] == 'POST')
   {
     $uploaddir = 'capa_livro/';
-    $pdf = 'pdf_livro/';
 
     if(!is_dir($uploaddir))
       mkdir($uploaddir);
-    if(!is_dir($pdf))
-      mkdir($pdf);
 
     $imagem = $_FILES['imagem']['name'];
     $uploadfile = $uploaddir . $_FILES['imagem']['name'];
-    $arquivo_pdf = $_FILES['pdf']['name'];
-    $pdf_livro = $pdf . $_FILES['pdf']['name'];
 
     $titulo = $_POST['titulo'];
     $autor = $_POST['autor'];
     $preco = str_replace(",",".", $_POST['preco']);
-    $categoria = $_POST['fk_categoria'];
+    $categoria = $_POST['id_categoria']; //foreign key
 
-    //está caindo na linha 127 // move_uploaded_file permite apenas mover um arquivo
-    if(move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile) and move_uploaded_file($_FILES['pdf']['tmp_name'], $pdf_livro))
+    if(move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile))
     {
-      $sql = "insert into livro(imagem, titulo, autor, pdf, preco, fk_categoria) values('$imagem','$titulo','$autor','$arquivo_pdf','$preco','$categoria')";
+      $sql = "insert into livro(imagem, titulo, autor, preco, id_categoria) values('$imagem','$titulo','$autor','$preco','$categoria')";
 
       if($conexao->query($sql))
       {
