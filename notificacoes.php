@@ -70,7 +70,7 @@
                 echo '<div style="display: flex; align-items: center;">
                          <div class="alert alert-success w-100" id="alertasucesso" style="display: flex; flex-direction: column;">
                             <div style="display: flex; align-items: center; justify-content: space-between;">
-                                <h5>🙎🏽‍♂️ Cliente: '.$linha['fk_cliente'].'&nbsp;&nbsp;&nbsp;<a href="ver_sugestoes.php?id='.$linha['id_notificacao'].'"><button class="btn btn-dark">Ver Sugestão</button></a></h5>
+                                <h5>🙎🏽‍♂️ Cliente: '.$linha['id_cliente'].'&nbsp;&nbsp;&nbsp;<a href="ver_sugestoes.php?id='.$linha['id_notificacao'].'"><button class="btn btn-dark">Ver Sugestão</button></a></h5>
                                 <a href="?id='.$linha['id_notificacao'].'"><h3><i class="fas fa-trash-alt text-danger" style="margin-left: auto;"></i></h3></a>
                             </div>
                          </div>

@@ -26,7 +26,7 @@
         {
             $linha = $result->fetch_assoc();
             $sugestao = $linha['mensagem'];
-            $fk_cliente = $linha['fk_cliente'];
+            $fk_cliente = $linha['id_cliente'];
 
             if(file_exists($sugestao))
                 $conteudo = file_get_contents($sugestao); // faz a leitura do arquivo - mostra a escrita

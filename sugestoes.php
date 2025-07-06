@@ -73,7 +73,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') // Verifica se o formulário foi enviad
     file_put_contents($arquivo, $mensagem); // Cria ou sobrescreve o arquivo com o conteúdo da variável $mensagem
     $fk_cliente = $id;
   
-    $sql = "insert into notificacoes(mensagem, fk_cliente) values('$arquivo','$fk_cliente')";
+    $sql = "insert into notificacoes(mensagem, id_cliente) values('$arquivo','$fk_cliente')";
 
         if($conexao->query($sql))
         {
