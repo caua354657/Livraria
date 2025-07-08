@@ -1,7 +1,3 @@
-<?php
-ob_start();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -32,7 +28,6 @@ ob_start();
 <div class="container-pdf">
   
 <form action="#" enctype="multipart/form-data" method="post">
-
     <div class="card bg-primary text-white">
         <div class="card-body"><center><b>Adicionar PDF no Livro</b></center></div>
     </div>    
@@ -71,7 +66,7 @@ ob_start();
 
         if(move_uploaded_file($_FILES['pdf']['tmp_name'], $uploadfile))
         {
-            $sql = "insert into livro(pdf) values('$pdf')";
+            $sql = "update livro set pdf = '$pdf' where id_livro = $id";
 
             if($conexao->query($sql))
             {
@@ -79,7 +74,6 @@ ob_start();
                 echo '<div id="spinner-overlay">
                         <div id="spinner"></div>
                       </div>';
-                ob_end_flush();
             }
             else
                 echo "Houve um problema no upload do arquivo no SGBD.<br>".$conexao->error;
