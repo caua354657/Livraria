@@ -208,7 +208,7 @@ if ($result = $conexao->query($sql))
                             <h3>ℹ️ Informações</h3>
                             <ul>
                               <li><a href="https://workspace.google.com/intl/pt-BR/gmail/" target="_blank" id="linkfooter">booktree@gmail.com</a></li>
-                              <li><a href="#" id="linkfooter">Política Privacidade</a></li>
+                              <li><a href="#" id="linkfooter" >Política Privacidade</a></li>
                               <li><a href="#" id="linkfooter">Termos Uso</a></li>
                             </ul>
                           </div>
