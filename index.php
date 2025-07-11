@@ -92,7 +92,7 @@ session_start();
                     echo '<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="sugestoes.php">💡 Sugestões para o Site</a></li>';       
           echo '</ul>
           <hr>
-          <div class="dropdown d-flex">
+          <div class="d-flex dropdown">
             <img src="foto_perfil/'.$linha['foto_perfil'].'" width="50" height="50" class="me-2" style="border: 1px solid black;">
             <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 200px; white-space: normal; word-break: break-word;">
               <strong>'.$_SESSION['nome'].'</strong>

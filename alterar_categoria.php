@@ -74,7 +74,6 @@
                     <strong>Erro ao atualizar dados.</strong>
                   </div>';
     }
-
     $conexao->close();
 ?>
 

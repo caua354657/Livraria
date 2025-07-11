@@ -36,7 +36,7 @@
       <input type="text" class="form-control" name="titulo" disabled value="<?php echo $titulo; ?>">  
     </div>
     <div class="mt-3 mb-3">
-      <label for="pdf" class="form-label">📄 PDF</label>
+      <label for="pdf" class="form-label">📄 PDF (Max: 2 MB)</label>
       <input type="file" class="form-control" name="pdf" required accept="application/pdf">  
     </div>
     <div class="row g-2">
