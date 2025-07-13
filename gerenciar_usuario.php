@@ -59,7 +59,7 @@
         }
         else
             echo '<div class="alert alert-danger">
-                    <strong>Falha ao excluir Notificação.</strong>'.$conexao->error.'
+                    <strong>Falha ao excluir Cliente.</strong>'.$conexao->error.'
                   </div>';
     }
 ?>

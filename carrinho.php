@@ -93,7 +93,7 @@ else
               </tr>
             </thead>';
 
-    $totalcompra = 0;     
+    $total_compra = 0;     
     foreach($_SESSION['carrinho'] as $id => $qtd) // laço repetição para vetor // $id é o indíce, $qtd é conteúdo //
     {          
       $sql = "select * from livro where id_livro = $id";
@@ -104,7 +104,7 @@ else
         {
           $id = $row['id_livro'];
           $sub = $row['preco'] * $qtd;
-          $totalcompra += $sub;
+          $total_compra += $sub;
           echo '<tr>';
             echo '<td class="text-center align-middle"><img src="img/'.$row['imagem'].'" width="80" height="80"></td>';
             echo '<td class="text-center align-middle">'.$row['titulo'].'</td>';
@@ -117,10 +117,10 @@ else
         }
       }
     }
-    $_SESSION['total'] = $totalcompra;
+    $_SESSION['total'] = $total_compra;
     echo '<tr>';
     echo '<td colspan="5" class="text-end fw-bold">Total:</td>';
-    echo '<td class="text-center fw-bold">R$'.number_format($totalcompra, 2, ',', '.').'</td>';
+    echo '<td class="text-center fw-bold">R$'.number_format($total_compra, 2, ',', '.').'</td>';
     echo '<td></td>';
     echo '</tr>';
     echo '</table>';

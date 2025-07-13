@@ -1,3 +1,8 @@
+<?php
+session_start();
+$total_compra = $_SESSION['total'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -12,13 +17,14 @@
 <body>
 
 <div class="pagamento-container">
-        <form action="#" method="post">
+        <form action="finalizar_compra.php" method="post">
               <div class="card bg-success text-white">
                 <div class="card-body"><center><b>Pagamento</b></center></div>
               </div>
               <div class="mt-2 mb-3">
                 <label for="pagamento" class="form-label">Forma de Pagamento</label>
                 <select class="form-select" name="pagamento" required>
+                  <option value="">Selecione</option>
                   <option value="pix">🧾 BOLETO</option>
                   <option value="cartao">💳 CARTÃO</option>
                   <option value="boleto">💸PIX</option>
@@ -26,9 +32,9 @@
               </div>
               <div class="d-flex">
                   <a href="carrinho.php" type="button" class="btn btn-secondary w-50 me-2">Voltar</a>
-                  <a href="finalizar_compra.php" type="submit" class="btn btn-success w-50 me-2">Finalizar Compra</a>
+                  <button type="submit" class="btn btn-success w-50 me-2">Finalizar Compra</button>
               </div>
-          </form>
+        </form>
 </div>
 
 </body>

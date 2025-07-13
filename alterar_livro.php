@@ -31,7 +31,7 @@ ob_start();
         $titulo = $linha['titulo'];
         $autor = $linha['autor'];
         $preco = $linha['preco'];
-        $categoria = $linha['fk_categoria'];
+        $categoria = $linha['id_categoria'];
       }
 ?>
 
@@ -69,7 +69,7 @@ ob_start();
             </div>
             <div class="col-6">
                 <label for="categoria">🏷️ Categoria</label>
-                <select class="form-select form-control" name="fk_categoria">
+                <select class="form-select form-control" name="id_categoria">
                     <option value="" disabled selected style="background-color: black; color: white;">Selecione uma categoria</option>
                     <option value="1" <?php if ($categoria == 1) echo 'selected'; ?>>Terror</option>
                     <option value="2" <?php if ($categoria == 2) echo 'selected'; ?>>Fantasia</option>
@@ -109,13 +109,13 @@ ob_start();
         $titulo = $_POST['titulo'];
         $autor = $_POST['autor'];
         $preco = $_POST['preco'];
-        $categoria = $_POST['fk_categoria'];
+        $categoria = $_POST['id_categoria'];
         
         if(!empty($_FILES['imagem']['name']))
         {
             if(move_uploaded_file($_FILES['imagem']['tmp_name'], $uploadfile))
             {
-                $sql = "update livro set imagem = '$imagem', titulo = '$titulo', autor = '$autor', preco = '$preco', fk_categoria = '$categoria' where id_livro = $id";
+                $sql = "update livro set imagem = '$imagem', titulo = '$titulo', autor = '$autor', preco = '$preco', id_categoria = '$categoria' where id_livro = $id";
  
                 if($conexao->query($sql))
                 {
@@ -133,7 +133,7 @@ ob_start();
         }
         else
         {   
-            $sql = "update livro set titulo = '$titulo', autor = '$autor', preco = '$preco', fk_categoria = '$categoria' where id_livro = $id";
+            $sql = "update livro set titulo = '$titulo', autor = '$autor', preco = '$preco', id_categoria = '$categoria' where id_livro = $id";
  
             if($conexao->query($sql))
             {

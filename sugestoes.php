@@ -36,7 +36,8 @@ session_start();
 <form action="#" enctype="multipart/form-data" method="post">
     <div class="card bg-primary text-white">
         <div class="card-body"><center><b>Sugestões Site</b></center></div>
-    </div>    <div class="mt-3 mb-2">
+    </div>    
+    <div class="mt-3 mb-2">
       <label for="nome" class="form-label">🙎 Usuário</label>
       <input type="text" class="form-control" name="nome" disabled value="<?php echo $nome; ?>">  
     </div>
@@ -44,7 +45,6 @@ session_start();
         <label for="sugestao" class="form-label">💬 Enviar sugestão</label>
         <textarea class="form-control" name="texto" rows="3" placeholder="Digite sua sugestão aqui..." required></textarea>
     </div>
-    <hr>
         <div class="row">
             <div class="col-6">
                 <div class="d-grid">

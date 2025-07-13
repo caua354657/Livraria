@@ -49,7 +49,7 @@ if(isset($_GET['acoes']))
   if(count($_SESSION['favoritos']) == 0)
   {
     echo '<div class="alert alert-danger text-center" role="alert">
-            <h4><b>Nenhum livro Favoritado</b></h4>
+            <h4><b>❤️ Nenhum livro Favoritado</b></h4>
             <h6>Aguarde redirecionar...</h6>
           </div>';
     header("refresh: 2; url=index.php");

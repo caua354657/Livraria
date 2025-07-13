@@ -80,8 +80,8 @@ session_start();
             </div>
           <hr>
               <ul class="list-group flex-column mb-auto">
-                  <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="meus_livros.php">📙 Meus Livros</a></li>
                   <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="carrinho.php">🛒 Carrinho</a></li>
+                  <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="historico_compras.php">🛍️ Histórico Compras</a></li>
                   <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="meus_favoritos.php">❤️ Meus Favoritos</a></li>'; 
                   if($_SESSION['adm'] == 'admin')
                      echo'<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="notificacoes.php">🔔 Notificações</a><span class="badge bg-success">'.$totalnotificacoes.'</span></li>
@@ -153,14 +153,14 @@ $sql = "select * from livro where id_categoria = 5 and titulo like '%$livro%' or
 if ($result = $conexao->query($sql)) 
 {
     echo '<div class="container livros-container my-4">';
-    echo '<div class="row g-4">';
+    echo '<div class="row g-5">';
 
     while($row = $result->fetch_assoc()) 
     {
         $id = $row['id_livro'];
         $arquivo = $row['pdf'];
         echo '<div class="col-6 col-md-4 d-flex justify-content-center">
-                <div class="card" style="width: 275px;">
+                <div class="card" style="width: 280px;">
                   <div class="d-flex justify-content-center align-items-center card-body btn btn-danger" style="position: absolute; width: 45px; height: 45px;">
                     <a href="meus_favoritos.php?acoes=favoritar&id='.$id.'" class="nav-link" style="cursor: pointer; font-size: 30px;">❤️</a>
                   </div>
@@ -172,9 +172,9 @@ if ($result = $conexao->query($sql))
                     <h4 class="card-title">'.$row['titulo'].'</h4>
                     <p class="card-text mb-1 text-muted">'.$row['autor'].'</p>
                     <p class="card-text fw-bold" style="color: rgb(159, 133, 28)">R$'.number_format($row['preco'], 2, ',', '.').'</p>
-                    <div class="d-flex">
-                      <a href="pdf_livro/'.$arquivo.'" class="btn btn-outline-primary w-50 me-2" download>⬇️ PDF</a>
-                      <a href="carrinho.php?acao=add&id='.$id.'" class="btn btn-success w-50">Comprar</a>
+                    <div class="d-flex gap-2">
+                      <a href="pdf_livro/'.$arquivo.'" class="btn btn-outline-primary" download>PDF</a>
+                      <a href="carrinho.php?acao=add&id='.$id.'" class="btn btn-success w-100">Comprar</a>
                     </div>
                   </div>
                 </div>

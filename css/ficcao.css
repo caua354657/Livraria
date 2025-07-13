@@ -1,14 +1,3 @@
-@keyframes mudaFundo 
-{
-  0%{background-color: #403696;}
-  25%{background-color: #443d92;}
-  50%{background-color: #3737ac;}
-  75%{background-color: #3a399c;}
-  100%{background-color: #403696;}
-}
-
-body{animation: mudaFundo 8s infinite alternate;}
-
 #navlink:hover{background-color: red;}
 
 #nav{color: white;}

@@ -53,7 +53,7 @@
 
         if($conexao->query($sqlinsert))
         {
-            header("refresh: 1; url=index.php");
+            header("refresh: 1; url=gerenciar_categorias.php");
             echo '<div id="spinner-overlay">
                     <div id="spinner"></div>
                   </div>';
