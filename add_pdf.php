@@ -29,7 +29,7 @@
   
 <form action="#" enctype="multipart/form-data" method="post">
     <div class="card bg-primary text-white">
-        <div class="card-body"><center><b>Adicionar PDF no Livro</b></center></div>
+        <div class="card-body"><center><b>Adicionar PDF Livro</b></center></div>
     </div>    
     <div class="mt-3 mb-3">
       <label for="titulo" class="form-label">📖 Título</label>
