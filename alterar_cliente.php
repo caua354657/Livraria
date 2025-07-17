@@ -116,6 +116,12 @@ ob_start();
                             echo '<div id="spinner-overlay">
                                     <div id="spinner"></div>
                                   </div>';
+                            if(!empty($foto))
+                            {
+                                $arquivo = "foto_perfil/".$foto;
+                                if(file_exists($arquivo))
+                                    unlink($arquivo);
+                            }
                         }
                         else
                             echo '<div class="alert alert-danger text-center">

@@ -60,13 +60,13 @@ if(isset($_GET['acoes']))
           <div class="header-titulo d-flex justify-content-center align-items-center" style="height: 80px;">
             <h4>❤️ Meus Favoritos</h4>
           </div>
-          <div class="conteudo-fundo">
-              <div class="text-start p-3">
-                <a href="terror.php" class="btn btn-secondary">Voltar</a>
-              </div>';
+          <div class="text-start p-3">
+            <a href="terror.php" class="btn btn-secondary">Voltar</a>
+          </div>';
 
     echo '<div class="container livros-container my-4">';
     echo '<div class="row g-4">';
+
     foreach($_SESSION['favoritos'] as $id => $qtd) // laço repetição para vetor // $id é o indíce, $qtd é conteúdo //
     {          
       $sql = "select * from livro where id_livro = $id";
@@ -98,6 +98,7 @@ if(isset($_GET['acoes']))
         }
       }
     }
+
     echo '</div>';
     echo '</div>';
   }

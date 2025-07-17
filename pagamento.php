@@ -32,10 +32,18 @@ $total_compra = $_SESSION['total'];
               </div>
               <div class="d-flex">
                   <a href="carrinho.php" type="button" class="btn btn-secondary w-50 me-2">Voltar</a>
-                  <button type="submit" class="btn btn-success w-50 me-2">Finalizar Compra</button>
+                  <button type="submit" class="btn btn-success w-50 me-2">Finalizar</button>
               </div>
         </form>
 </div>
+
+<div id="spinner" class="d-none position-fixed top-0 start-0 w-100 h-100 bg-black bg-opacity-75 d-flex justify-content-center align-items-center" style="z-index: 1050;">
+  <div class="text-center">
+    <div class="spinner-border text-success" style="width: 4rem; height: 4rem;" role="status"></div>
+  </div>
+</div>
+
+<script src="js/pagamento.js"></script>
 
 </body>
 </html>

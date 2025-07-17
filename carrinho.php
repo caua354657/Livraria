@@ -117,7 +117,6 @@ else
         }
       }
     }
-    $_SESSION['total'] = $total_compra;
     echo '<tr>';
     echo '<td colspan="5" class="text-end fw-bold">Total:</td>';
     echo '<td class="text-center fw-bold">R$'.number_format($total_compra, 2, ',', '.').'</td>';
@@ -130,8 +129,8 @@ else
             <a href="terror.php" class="btn btn-secondary w-50">Continuar Comprando</a>
             <a href="pagamento.php" class="btn btn-success w-50">Ir para Pagamento</a>
           </div>';
+    $_SESSION['total'] = $total_compra;
   }
-  
     $conexao->close();
 ?>
 

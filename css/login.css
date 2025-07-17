@@ -16,6 +16,11 @@ body{background-image: url('../img/fundo.jpg');
                 border-radius: 10px;
                 box-shadow: 0 0 15px rgba(0, 0, 0, 0.53);}
 
+@media(max-width: 768px) 
+{
+    .login-container{width: 80%;}
+}
+
 .card{text-align: center;
       font-size: 18px;}
 
