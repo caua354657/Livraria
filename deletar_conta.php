@@ -23,8 +23,7 @@ session_start();
     if(isset($_GET['id_cliente']))
     {  
       include_once("conexaoSGBD.php");
-      $id = $_GET['id_cliente'];
-      $_SESSION['id_cliente'] = $id;
+      $id = $_SESSION['id_cliente'];
 
       $sql = "select * from cliente where id_cliente = ".$_SESSION['id_cliente'];
 
