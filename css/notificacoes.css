@@ -1,0 +1,15 @@
+body {background-color: #f2f6fc;
+      font-family: 'Segoe UI', sans-serif;}
+
+.card {margin-top: 30px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      border: none;
+      border-radius: 12px;
+      margin-bottom: 20px;}
+
+.header-titulo{background-color: #4d7cff;
+               color: white;
+               border-top-left-radius: 8px;
+               border-top-right-radius: 8px;}
+
+#alertasucesso:hover{background-color: rgba(87, 241, 73, 0.4);}

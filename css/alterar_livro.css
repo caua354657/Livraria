@@ -1,0 +1,23 @@
+body{background-image: url('../img/fundo.jpg');
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;}
+
+.container-alterar{max-width: 500px;
+                width: 100%;
+                background: #ffffff;
+                padding: 18px;
+                border-radius: 10px;}
+
+@media(max-width: 768px) 
+{
+    .container-alterar{width: 80%;}
+}
+
+label{font-weight: bold;}
