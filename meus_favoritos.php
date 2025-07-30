@@ -101,6 +101,7 @@ if(isset($_GET['acoes']))
 
     echo '</div>';
     echo '</div>';
+    echo '</div>';
   }
     $conexao->close();
     

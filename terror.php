@@ -81,19 +81,23 @@ session_start();
             </div>
           <hr>
               <ul class="list-group flex-column mb-auto">
+                  <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="meus_livros.php">📖 Meus Livros</a></li>
                   <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="carrinho.php">🛒 Carrinho</a></li>
                   <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="historico_compras.php">🛍️ Histórico Compras</a></li>
                   <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="meus_favoritos.php">❤️ Meus Favoritos</a></li>'; 
-                  if($_SESSION['adm'] == 'admin')
-                     echo'<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="notificacoes.php">🔔 Notificações</a><span class="badge bg-success">'.$totalnotificacoes.'</span></li>
-                          <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_usuario.php">🙎🏽‍♂️ Gerenciar Usuários</a></li>
-                          <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_livros.php">📚 Gerenciar Livros</a></li>
-                          <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_categorias.php">🏷️ Gerenciar Categorias</a></li>';
-                  else
-                    echo '<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="sugestoes.php">💡 Sugestões para o Site</a></li>';       
+                  if(isset($_SESSION['adm']))
+                  {
+                    if($_SESSION['adm'] == 'admin')
+                      echo'<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="notificacoes.php">🔔 Notificações</a><span class="badge bg-success">'.$totalnotificacoes.'</span></li>
+                            <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_usuario.php">🙎🏽‍♂️ Gerenciar Usuários</a></li>
+                            <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_livros.php">📚 Gerenciar Livros</a></li>
+                            <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_categorias.php">🏷️ Gerenciar Categorias</a></li>';
+                    else
+                      echo '<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="sugestoes.php">💡 Sugestões para o Site</a></li>';       
+                  }
           echo '</ul>
           <hr>
-          <div class="dropdown d-flex">
+          <div class="d-flex dropdown">
             <img src="foto_perfil/'.$linha['foto_perfil'].'" width="50" height="50" class="me-2" style="border: 1px solid black;">
             <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 200px; white-space: normal; word-break: break-word;">
               <strong>'.$_SESSION['nome'].'</strong>
@@ -159,7 +163,6 @@ if ($result = $conexao->query($sql))
     while($row = $result->fetch_assoc()) 
     {
         $id = $row['id_livro'];
-        $arquivo = $row['pdf'];
         echo '<div class="col-6 col-md-4 d-flex justify-content-center">
                 <div class="card" style="width: 280px;">
                   <div class="d-flex justify-content-center align-items-center card-body btn btn-danger" style="position: absolute; width: 45px; height: 45px;">
@@ -173,10 +176,7 @@ if ($result = $conexao->query($sql))
                     <h4 class="card-title">'.$row['titulo'].'</h4>
                     <p class="card-text mb-1 text-muted">'.$row['autor'].'</p>
                     <p class="card-text fw-bold" style="color: rgb(159, 133, 28)">R$'.number_format($row['preco'], 2, ',', '.').'</p>
-                    <div class="d-flex gap-2">
-                      <a href="pdf_livro/'.$arquivo.'" class="btn btn-outline-primary" download>PDF</a>
-                      <a href="carrinho.php?acao=add&id='.$id.'" class="btn btn-success w-100">Comprar</a>
-                    </div>
+                    <a href="carrinho.php?acao=add&id='.$id.'" class="btn btn-success w-100">Comprar</a>
                   </div>
                 </div>
             </div>';

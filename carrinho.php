@@ -106,11 +106,11 @@ else
           $sub = $row['preco'] * $qtd;
           $total_compra += $sub;
           echo '<tr>';
-            echo '<td class="text-center align-middle"><img src="img/'.$row['imagem'].'" width="80" height="80"></td>';
+            echo '<td class="text-center align-middle"><img src="capa_livro/'.$row['imagem'].'" width="80" height="80"></td>';
             echo '<td class="text-center align-middle">'.$row['titulo'].'</td>';
             echo '<td class="text-center align-middle">'.$row['autor'].'</td>';
             echo '<td class="text-center align-middle">R$'.number_format($row['preco'], 2, ',', '.').'</td>';
-            echo '<td class="text-center align-middle"><input class="form-control text-center" type="number" name="prod['.$id.']" value="'.$qtd.'" min=0 max=1000 onchange="this.form.submit()"></td>';
+            echo '<td class="text-center align-middle"><input class="form-control text-center" type="number" name="prod['.$id.']" value="'.$qtd.'" min="0" max="1000" step="1" onchange="validar(this)"></td>';
             echo '<td class="text-center align-middle">R$'.number_format($sub, 2, ',', '.').'</td>';
             echo '<td class="text-center align-middle"><a href="?acao=dell&id='.$id.'" class="btn btn-outline-danger">❌</a></td>';
           echo '</tr>';
@@ -133,6 +133,8 @@ else
   }
     $conexao->close();
 ?>
+
+<script scr="js/validar.js"></script>
 
 </div>
 

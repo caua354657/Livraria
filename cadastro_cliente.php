@@ -103,7 +103,7 @@ if($_POST)
 
           if($conexao->query($sql))
           {
-            header("refresh: 3; url=index.php");
+            header("refresh: 3; url=login.php");
             echo '<div id="spinner-overlay">
                     <div id="spinner"></div>
                   </div>';
@@ -120,7 +120,7 @@ if($_POST)
     
             if($conexao->query($sql))
             {
-              header ("refresh: 3; url=index.php");
+              header ("refresh: 3; url=login.php");
               echo '<div id="spinner-overlay">
                         <div id="spinner"></div>
                     </div>';

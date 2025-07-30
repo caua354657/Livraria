@@ -80,16 +80,20 @@ session_start();
             </div>
           <hr>
               <ul class="list-group flex-column mb-auto">
+                  <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="meus_livros.php">📖 Meus Livros</a></li>
                   <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="carrinho.php">🛒 Carrinho</a></li>
                   <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="historico_compras.php">🛍️ Histórico Compras</a></li>
                   <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="meus_favoritos.php">❤️ Meus Favoritos</a></li>'; 
-                  if($_SESSION['adm'] == 'admin')
-                     echo'<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="notificacoes.php">🔔 Notificações</a><span class="badge bg-success">'.$totalnotificacoes.'</span></li>
-                          <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_usuario.php">🙎🏽‍♂️ Gerenciar Usuários</a></li>
-                          <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_livros.php">📚 Gerenciar Livros</a></li>
-                          <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_categorias.php">🏷️ Gerenciar Categorias</a></li>';
-                  else
-                    echo '<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="sugestoes.php">💡 Sugestões para o Site</a></li>';       
+                  if(isset($_SESSION['adm']))
+                  {
+                    if($_SESSION['adm'] == 'admin')
+                      echo'<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="notificacoes.php">🔔 Notificações</a><span class="badge bg-success">'.$totalnotificacoes.'</span></li>
+                            <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_usuario.php">🙎🏽‍♂️ Gerenciar Usuários</a></li>
+                            <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_livros.php">📚 Gerenciar Livros</a></li>
+                            <li class="list-group-item" style="border: none;"><a class="dropdown-item" href="gerenciar_categorias.php">🏷️ Gerenciar Categorias</a></li>';
+                    else
+                      echo '<li class="list-group-item d-flex" style="border: none;"><a class="dropdown-item" href="sugestoes.php">💡 Sugestões para o Site</a></li>';       
+                  }
           echo '</ul>
           <hr>
           <div class="d-flex dropdown">
