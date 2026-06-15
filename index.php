@@ -38,15 +38,17 @@ session_start();
 </nav>
 
 <?php
+   $foto = '';
+
    if(isset($_SESSION['id_cliente']))
    {
     $id = $_SESSION['id_cliente'];
 
     $sql = "select foto_perfil from cliente where id_cliente = $id";
 
-    if ($result = $conexao->query($sql)) 
+    if ($result = $conexao->query($sql))
     {
-      if($linha = $result->fetch_assoc()) 
+      if($linha = $result->fetch_assoc())
         $foto = $linha['foto_perfil'];
     }
    }
@@ -96,7 +98,7 @@ session_start();
           echo '</ul>
           <hr>
           <div class="d-flex dropdown">
-            <img src="foto_perfil/'.$linha['foto_perfil'].'" width="50" height="50" class="me-2" style="border: 1px solid black;">
+            <img src="foto_perfil/'.$foto.'" width="50" height="50" class="me-2" style="border: 1px solid black;">
             <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false" style="max-width: 200px; white-space: normal; word-break: break-word;">
               <strong>'.$_SESSION['nome'].'</strong>
             </a>

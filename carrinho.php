@@ -106,7 +106,7 @@ else
           $sub = $row['preco'] * $qtd;
           $total_compra += $sub;
           echo '<tr>';
-            echo '<td class="text-center align-middle"><img src="img/'.$row['imagem'].'" width="80" height="80"></td>';
+            echo '<td class="text-center align-middle"><img src="capa_livro/'.$row['imagem'].'" width="80" height="80" style="object-fit: cover;"></td>';
             echo '<td class="text-center align-middle">'.$row['titulo'].'</td>';
             echo '<td class="text-center align-middle">'.$row['autor'].'</td>';
             echo '<td class="text-center align-middle">R$'.number_format($row['preco'], 2, ',', '.').'</td>';
